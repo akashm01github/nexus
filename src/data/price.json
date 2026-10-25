@@ -1,0 +1,258 @@
+{
+  "lab": "NEXUS PATHOLOGY LAB",
+  "document": "Patient Rate Chart",
+  "address": "Shyamsundar Thanamore, Purba Bardhaman, 713424",
+  "owner": "Mr. Abhik Maji (BMLT, MMLT)",
+  "contact_number": "9635465501",
+  "currency": "INR",
+  "tests": [
+    {
+      "test_name": "HEMOGLOBIN (HB %)",
+      "price": 50
+    },
+    {
+      "test_name": "CBC",
+      "price": 250
+    },
+    {
+      "test_name": "COMPLETE HEMOGRAM",
+      "price": 450
+    },
+    {
+      "test_name": "P. COUNT",
+      "price": 100
+    },
+    {
+      "test_name": "RETI COUNT",
+      "price": 100
+    },
+    {
+      "test_name": "SUGAR FASTING",
+      "price": 50
+    },
+    {
+      "test_name": "SUGAR PP",
+      "price": 50
+    },
+    {
+      "test_name": "HBA1C",
+      "price": 500
+    },
+    {
+      "test_name": "CHOLESTEROL",
+      "price": 150
+    },
+    {
+      "test_name": "TRIGLYCERIDE (TG)",
+      "price": 200
+    },
+    {
+      "test_name": "HDL",
+      "price": 200
+    },
+    {
+      "test_name": "LIPID PROFILE",
+      "price": 500
+    },
+    {
+      "test_name": "TOTAL PROTEIN",
+      "price": 120
+    },
+    {
+      "test_name": "BILIRUBIN",
+      "price": 120
+    },
+    {
+      "test_name": "SGPT (ALT)",
+      "price": 120
+    },
+    {
+      "test_name": "SGOT (AST)",
+      "price": 120
+    },
+    {
+      "test_name": "ALKA-POS",
+      "price": 120
+    },
+    {
+      "test_name": "LIVER FUNCTION TEST (LFT)",
+      "price": 500
+    },
+    {
+      "test_name": "UREA",
+      "price": 120
+    },
+    {
+      "test_name": "CREATININE",
+      "price": 120
+    },
+    {
+      "test_name": "URIC ACID",
+      "price": 120
+    },
+    {
+      "test_name": "TSH (THYROID)",
+      "price": "300/250"
+    },
+    {
+      "test_name": "THYROID PROFILE (TSH+T3+T4)",
+      "price": 500
+    },
+    {
+      "test_name": "FT3",
+      "price": 300
+    },
+    {
+      "test_name": "FT4",
+      "price": 300
+    },
+    {
+      "test_name": "FT4 + TSH",
+      "price": 400
+    },
+    {
+      "test_name": "THYROID PROFILE FREE",
+      "price": 900
+    },
+    {
+      "test_name": "RA FACTOR",
+      "price": 200
+    },
+    {
+      "test_name": "VITAMIN D3",
+      "price": 1200
+    },
+    {
+      "test_name": "VITAMIN B12",
+      "price": 1000
+    },
+    {
+      "test_name": "BT & CT",
+      "price": 80
+    },
+    {
+      "test_name": "SODIUM & POTASSIUM (NA+, K+)",
+      "price": 400
+    },
+    {
+      "test_name": "ELECTROLYTES",
+      "price": 500
+    },
+    {
+      "test_name": "CRP",
+      "price": 400
+    },
+    {
+      "test_name": "AMYLASE",
+      "price": 300
+    },
+    {
+      "test_name": "LIPASE",
+      "price": 300
+    },
+    {
+      "test_name": "BLOOD GROUP",
+      "price": 50
+    },
+    {
+      "test_name": "IgE",
+      "price": 900
+    },
+    {
+      "test_name": "IgG",
+      "price": 900
+    },
+    {
+      "test_name": "P. TIME",
+      "price": 150
+    },
+    {
+      "test_name": "APTT",
+      "price": 200
+    },
+    {
+      "test_name": "WIDAL TEST",
+      "price": 150
+    },
+    {
+      "test_name": "M.P.D.A",
+      "price": 300
+    },
+    {
+      "test_name": "SEROLOGY (HIV+HCV+HBSAG)",
+      "price": 900
+    },
+    {
+      "test_name": "URINE R/E-M/E",
+      "price": 150
+    },
+    {
+      "test_name": "URINE R/E-C/S",
+      "price": 250
+    },
+    {
+      "test_name": "URINE PREGNANCY",
+      "price": 100
+    },
+    {
+      "test_name": "URINE ACR",
+      "price": 600
+    },
+    {
+      "test_name": "STOOL R/E",
+      "price": 100
+    },
+    {
+      "test_name": "DENGUE",
+      "price": 900
+    },
+    {
+      "test_name": "FERRITIN",
+      "price": 900
+    },
+    {
+      "test_name": "PROLACTIN",
+      "price": 800
+    },
+    {
+      "test_name": "INSULIN",
+      "price": 900
+    },
+    {
+      "test_name": "HLA B27",
+      "price": 3900
+    },
+    {
+      "test_name": "PSA",
+      "price": 800
+    },
+    {
+      "test_name": "ANTI CCP",
+      "price": 2400
+    },
+    {
+      "test_name": "ASO",
+      "price": 1000
+    },
+    {
+      "test_name": "FOLIC ACID",
+      "price": 1300
+    },
+    {
+      "test_name": "BETA HCG",
+      "price": 750
+    },
+    {
+      "test_name": "TB GOLD (QUANTIFERON)",
+      "price": 2800
+    },
+    {
+      "test_name": "NT-PRO BNP",
+      "price": 3450
+    },
+    {
+      "test_name": "HPLC",
+      "price": 1300
+    }
+  ]
+}
