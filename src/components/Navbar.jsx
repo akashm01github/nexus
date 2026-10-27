@@ -20,8 +20,8 @@ function Navbar({ labName = 'Nexus Pathology Lab' }) {
             src="/logo.png"
             alt=""
             className="navbar__logo-img"
-            width="36"
-            height="36"
+            width="64"
+            height="64"
           />
           <span className="navbar__name">{labName}</span>
         </a>

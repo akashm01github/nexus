@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { formatPrice } from '../utils/formatPrice.js'
 
-// Decorative liquid colour and level (%) for each tube. Names and prices come from price.json.
+
 const TUBE_STYLES = [
   { level: 62, color: 'hsl(214 72% 44%)' },
   { level: 80, color: 'hsl(190 70% 40%)' },
@@ -9,13 +9,16 @@ const TUBE_STYLES = [
   { level: 70, color: 'hsl(150 60% 42%)' },
 ]
 
-// Bubble positions inside every tube (percent from left, size px, delay s, duration s).
+
 const BUBBLES = [
   { left: 24, size: 6, delay: 0, dur: 3.4 },
   { left: 56, size: 4, delay: 1.1, dur: 2.8 },
   { left: 72, size: 7, delay: 2.2, dur: 3.9 },
   { left: 40, size: 3, delay: 0.6, dur: 2.4 },
 ]
+
+const BRAND_MAIN = 'NEXUS'
+const BRAND_SUB = 'PATHOLOGY LAB'
 
 function Hero({ labName, address, owner, featuredTests }) {
   const [active, setActive] = useState(null)
@@ -30,7 +33,44 @@ function Hero({ labName, address, owner, featuredTests }) {
 
       <div className="container hero__inner">
         <div className="hero__content">
-          <h1>Reliable Diagnostic Care at Transparent Prices</h1>
+          <h1 className="brand" aria-label="Nexus Pathology Lab">
+            <span className="brand__main" aria-hidden="true">
+              {BRAND_MAIN.split('').map((ch, k) => (
+                <span
+                  key={k}
+                  className={`brand__letter${ch === 'X' ? ' brand__letter--x' : ''}`}
+                  style={{ '--k': k }}
+                >
+                  {ch}
+                </span>
+              ))}
+              <span className="brand__scan" />
+            </span>
+
+            <span className="brand__sub" aria-hidden="true">
+              {BRAND_SUB.split('').map((ch, k) => (
+                <span
+                  key={k}
+                  className={`brand__sub-letter${ch === ' ' ? ' brand__sub-letter--gap' : ''}`}
+                  style={{ '--k': k }}
+                >
+                  {ch === ' ' ? '\u00A0' : ch}
+                </span>
+              ))}
+              <span className="brand__cursor" />
+            </span>
+
+            <svg className="brand__helix" viewBox="0 0 300 24" aria-hidden="true" focusable="false">
+              {Array.from({ length: 15 }, (_, n) => (
+                <g key={n} style={{ '--n': n }} className="brand__rung">
+                  <line x1={10 + n * 20} y1="4" x2={10 + n * 20} y2="20" />
+                  <circle cx={10 + n * 20} cy="4" r="3" />
+                  <circle cx={10 + n * 20} cy="20" r="3" />
+                </g>
+              ))}
+            </svg>
+          </h1>
+
           <p className="hero__text">
             {labName} is a pathology laboratory in {address}. Check the price of any of our
             diagnostic tests before you visit.

@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@800;900&family=Space+Mono:wght@700&display=swap');
+
 /* ---------- Layout ---------- */
 .container {
   width: 100%;
@@ -130,8 +133,8 @@
 .navbar__logo-img {
   display: block;
   flex: none;
-  width: 36px;
-  height: 36px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
 }
 
@@ -207,14 +210,6 @@
   align-items: end;
 }
 
-.hero h1 {
-  max-width: 15ch;
-  font-size: clamp(2.2rem, 9vw, 3.9rem);
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-}
-
 .hero__text {
   max-width: 34rem;
   margin-top: 20px;
@@ -250,6 +245,257 @@
 
 .hero__actions .btn {
   flex: 1 1 190px;
+}
+
+/* ---------- NEXUS PATHOLOGY LAB brand title ---------- */
+.brand {
+  margin: 0;
+  max-width: none;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.brand__main {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: 'Unbounded', var(--font-display), sans-serif;
+  font-size: clamp(2.9rem, 14.5vw, 6.6rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  filter: drop-shadow(0 6px 0 rgba(23, 71, 184, 0.16));
+}
+
+/* Each letter rises in, then bobs in a travelling wave. Colour flows through the gradient. */
+.brand__letter {
+  display: inline-block;
+  cursor: default;
+  color: var(--cobalt);
+  background: linear-gradient(
+    100deg,
+    var(--cobalt) 0%,
+    var(--teal) 35%,
+    #2ebe8c 55%,
+    var(--teal) 75%,
+    var(--cobalt) 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    letter-in 0.9s cubic-bezier(0.34, 1.5, 0.64, 1) backwards,
+    letter-flow 5s linear infinite,
+    letter-bob 3.6s ease-in-out infinite;
+  animation-delay: calc(var(--k) * 110ms), calc(var(--k) * -400ms), calc(1.2s + var(--k) * 180ms);
+  transition: transform 0.3s cubic-bezier(0.34, 1.8, 0.64, 1);
+}
+
+.brand__letter:hover {
+  transform: translateY(-14px) rotate(-6deg) scale(1.08);
+}
+
+@keyframes letter-in {
+  from {
+    opacity: 0;
+    transform: translateY(60px) rotate(12deg) scale(0.6);
+    filter: blur(8px);
+  }
+}
+
+@keyframes letter-flow {
+  to {
+    background-position: -300% 0;
+  }
+}
+
+@keyframes letter-bob {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+/* The X is the "nexus": a spinning crosshair ring orbits it */
+.brand__letter--x {
+  position: relative;
+}
+
+.brand__letter--x::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 1.15em;
+  height: 1.15em;
+  margin: -0.575em 0 0 -0.575em;
+  border: 3px dashed var(--teal);
+  border-radius: 50%;
+  -webkit-text-fill-color: initial;
+  opacity: 0.55;
+  animation: nexus-orbit 9s linear infinite;
+}
+
+.brand__letter--x::after {
+  content: '';
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  width: 0.16em;
+  height: 0.16em;
+  border-radius: 50%;
+  background: #2ebe8c;
+  -webkit-text-fill-color: initial;
+  box-shadow: 0 0 0 0 rgba(46, 190, 140, 0.7);
+  animation: nexus-ping 1.8s ease-out infinite;
+}
+
+@keyframes nexus-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nexus-ping {
+  to {
+    box-shadow: 0 0 0 0.5em rgba(46, 190, 140, 0);
+  }
+}
+
+/* A scanner bar sweeps across the word like a slide being read */
+.brand__scan {
+  position: absolute;
+  top: -6%;
+  bottom: -6%;
+  left: 0;
+  width: 6px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, transparent, #2ebe8c, transparent);
+  box-shadow: 0 0 18px 4px rgba(46, 190, 140, 0.55);
+  pointer-events: none;
+  animation: scan 4.8s ease-in-out 2s infinite;
+  opacity: 0;
+}
+
+@keyframes scan {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  50% {
+    left: calc(100% - 6px);
+    opacity: 1;
+  }
+  58%,
+  100% {
+    left: calc(100% - 6px);
+    opacity: 0;
+  }
+}
+
+/* PATHOLOGY LAB: monospace "readout" that types in with a blinking cursor */
+.brand__sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 14px;
+  font-family: 'Space Mono', ui-monospace, monospace;
+  font-size: clamp(0.95rem, 4.6vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+}
+
+.brand__sub-letter {
+  display: inline-block;
+  animation: sub-in 0.35s steps(2, end) backwards;
+  animation-delay: calc(1.1s + var(--k) * 70ms);
+}
+
+.brand__sub-letter--gap {
+  width: 0.5em;
+}
+
+@keyframes sub-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+    color: var(--teal);
+  }
+}
+
+.brand__cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 6px;
+  background: var(--teal);
+  animation: cursor-blink 1s steps(1, end) infinite;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* DNA-style rung strip: dots pulse in a wave */
+.brand__helix {
+  display: block;
+  width: min(100%, 320px);
+  height: auto;
+  margin-top: 16px;
+  overflow: visible;
+}
+
+.brand__rung line {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  opacity: 0.35;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rung-stretch 2.4s ease-in-out infinite;
+  animation-delay: calc(var(--n) * 120ms);
+}
+
+.brand__rung circle {
+  fill: var(--teal);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rung-dot 2.4s ease-in-out infinite;
+  animation-delay: calc(var(--n) * 120ms);
+}
+
+.brand__rung circle:last-child {
+  fill: var(--cobalt);
+}
+
+@keyframes rung-stretch {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes rung-dot {
+  0%,
+  100% {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(1.3);
+  }
 }
 
 /* Floating bubbles / molecules drifting up behind the content */
@@ -935,7 +1181,15 @@
   .tube__bubble,
   .price-tag,
   .hero__molecules span,
-  .hero__pulse polyline {
+  .hero__pulse polyline,
+  .brand__letter,
+  .brand__letter--x::before,
+  .brand__letter--x::after,
+  .brand__scan,
+  .brand__sub-letter,
+  .brand__cursor,
+  .brand__rung line,
+  .brand__rung circle {
     animation: none;
   }
 
@@ -944,7 +1198,8 @@
   }
 
   .tube,
-  .price-tag {
+  .price-tag,
+  .brand__letter {
     transition: none;
   }
 }
@@ -1009,12 +1264,21 @@
     font-size: 1.1rem;
   }
 
+  .navbar__logo-img {
+    width: 64px;
+    height: 64px;
+  }
+
   .hero {
     padding: 88px 0 112px;
   }
 
   .hero__inner {
     grid-template-columns: 1.15fr 1fr;
+  }
+
+  .brand__main {
+    font-size: clamp(3.6rem, 7.4vw, 6.6rem);
   }
 
   .hero__actions .btn {
